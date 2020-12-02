@@ -1,0 +1,11 @@
+With hybrid Recommendation: 
+Recommend movieId: 32088with score: 7.309709816638938e-10 to me.
+Recommend movieId: 5271with score: 0.0 to me.
+Recommend movieId: 74263with score: 0.0 to me.
+Recommend movieId: 71017with score: 0.0 to me.
+Recommend movieId: 2954with score: 0.0 to me.
+Recommend movieId: 86947with score: 0.0 to me.
+Recommend movieId: 104583with score: 0.0 to me.
+Recommend movieId: 50942with score: 0.0 to me.
+Recommend movieId: 48045with score: 0.0 to me.
+Recommend movieId: 27009with score: 0.0 to me.
