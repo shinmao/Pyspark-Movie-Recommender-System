@@ -15,12 +15,13 @@ from pyspark.ml.evaluation import RegressionEvaluator
 
 if __name__ == '__main__':
     # path
-    root_path = "/Users/rafaelchen/Documents/MapReduce/hw4-recomm"
+    root_path = "/user/hchen28/input"
     ratings_path = root_path + "/ml-20m/ratings.csv"
     movies_path = root_path + "/ml-20m/movies.csv"
     tags_path = root_path + "/ml-20m/tags.csv"
-    als_output_path = root_path + "/output/als_movie_recommendation.txt"
-    hybrid_output_path = root_path + "/output/hybrid_movie_recommendation.txt"
+    output_root_path = "/home/hchen28/output"
+    als_output_path = output_root_path + "/als_movie_recommendation.txt"
+    hybrid_output_path = output_root_path + "/hybrid_movie_recommendation.txt"
 
     spark = SparkSession.builder.master("local").appName("Movie_Recommender").getOrCreate()
     sc = spark.sparkContext
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     # ALS model
     als_recommender = ALSRecommder(spark, movies_path, ratings_path)
     als_recommender.tune_test([0.1], [x for x in range(6, 20, 2)])
-    '''
+    
     als = als_recommender.set_Params(10, 0.01, 16)
     model = als.fit(new_ratings_df)
     userRecs = model.recommendForAllUsers(10)
@@ -85,5 +86,5 @@ if __name__ == '__main__':
             print(i[0], i[1])
             output.write("Recommend movieId: " + str(i[0]) + "with score: " + str(i[1]) + " to me.\n")
     output.close()
-    '''
+
     spark.stop()

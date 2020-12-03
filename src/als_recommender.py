@@ -49,13 +49,6 @@ class ALSRecommder:
         rmse = rmse_eval.evaluate(preds)
         mse = mse_eval.evaluate(preds)
 
-        # userRecs = self.model.recommendForAllUsers(10)
-        # get the recommended movie list with sorted scores
-        # get the recommended movie list with sorted predictions from above
-        # Try to match the top k movies in two recommended movie lists
-        # if the order of prediction list matched to recommended list + 1
-        # count through the whole recommended movie list
-
-        with open("/Users/rafaelchen/Documents/MapReduce/hw4-recomm/output/tuned_result.txt", "a+") as result:
+        with open("/home/hchen28/output/tuned_result.txt", "a+") as result:
             result.write("Test set (RMSE/MSE): " + str(rmse) + "/" + str(mse) + "\n")
         result.close()
